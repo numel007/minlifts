@@ -1,0 +1,68 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>MinLifts</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <!-- <h1>Welcome to MinLifts</h1> -->
+    <div id="left-column">
+        <section id="exercise">
+            <select id="exercise-name">
+                <option value="deadlift">Deadlift</option>
+                <option value="benchpress">Benchpress</option>
+                <option value="backsquat">Back Squat</option>
+                <option value="overheadpress">Overhead Press</option>
+            </select>
+        </section>
+
+        <section id="sets-reps">
+            <div id="set1">
+                <label for="reps1">Reps Set 1
+                    <input type="number" name="reps1" id="reps1">
+                </label>
+
+                <label for="weight1">Weight
+                    <input type="number" name="weight1" id="weight1">
+                </label>
+            </div>
+
+            <div id="set2">
+                <label for="reps2">Reps Set 2
+                    <input type="number" name="reps2" id="reps2">
+                </label>
+
+                <label for="weight2">Weight
+                    <input type="number" name="weight2" id="weight2">
+                </label>
+            </div>
+
+            <div id="set3">
+                <label for="reps3">Reps Set 3
+                    <input type="number" name="reps3" id="reps3">
+                </label>
+
+                <label for="weight3">Weight
+                    <input type="number" name="weight3" id="weight3">
+                </label>
+            </div>
+        </section>
+    </div>
+
+    <div id="right-column">
+        <section id="timer">
+            <label for="timer-input">Timer
+                <input type="datetime" name="timer-input" id="timer">
+            </label>
+        </section>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
