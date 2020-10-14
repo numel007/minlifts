@@ -45,15 +45,15 @@ function btnSetClicked() {
 
 function calculateClicked() {
     console.log(`${exerciseSelected} selected`)
-    const weightTotal = 0
+    let weightTotal = 0
 
     for (var i=1; i <= counter; i++) {
         var weightId = "weight" + i
         console.log(`${i} sets created.`)
-        const currentWeight = document.getElementById(weightId).value
+        let currentWeight = document.getElementById(weightId).value
         console.log(`${currentWeight} lifted in set${i}`)
-        // weightTotal += currentWeight
+        weightTotal += parseInt(currentWeight)
     };
-    
+
     console.log(`${weightTotal} total weight lifted.`)
 }
