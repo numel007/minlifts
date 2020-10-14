@@ -25,7 +25,7 @@ function btnSetClicked() {
         var newDiv = document.createElement('div')
         newDiv.id = `set-${counter}`;
         form.appendChild(newDiv);
-        console.log(`Created div for set ${counter}`)
+        console.log(`Created set ${counter}`)
 
         // Create weight input with id
         var addWeight = function() {
@@ -35,7 +35,6 @@ function btnSetClicked() {
             input.name = 'weight';
             input.placeholder = `Weight for set ${counter}`;
             newDiv.appendChild(input);
-            console.log(`Weight input ${counter} was created`)
         };
 
         // Create rep input with id
@@ -46,7 +45,6 @@ function btnSetClicked() {
             input.name = 'rep';
             input.placeholder = `Reps for set ${counter}`;
             newDiv.appendChild(input);
-            console.log(`Rep input ${counter} was created`)
         };
 
         addWeight();
@@ -56,7 +54,7 @@ function btnSetClicked() {
     addDiv();
 }
 
-// Handles Calculate Average Weight Lifted button click
+// Handles Calculate Average button click
 function calculateClicked() {
     console.log(`${exerciseSelected} selected`)
     let weightTotal = 0
@@ -87,6 +85,11 @@ function calculateClicked() {
 
     // Creates and writes into a paragraph the average weight lifted each set
     var weightAverage = document.createElement('p');
-    weightAverage.innerHTML = `${exerciseSelected} averaged ${weightTotal / repTotal} per rep.`
+    var liftTotals = document.createElement('p');
+
+    // Add paragraphs with average and lifted totals
+    weightAverage.innerHTML = `${exerciseSelected} averaged ${(weightTotal / repTotal).toFixed(2)}lbs per rep.`
+    liftTotals.innerHTML = `${weightTotal}lbs lifted over ${repTotal} reps.`
     calculateSection.appendChild(weightAverage);
+    calculateSection.appendChild(liftTotals);
 }
