@@ -1,8 +1,8 @@
-const btnClick = document.querySelector('#btn')
-btnClick.addEventListener('click', btnClicked)
+const btnClick = document.querySelector('#btnSet')
+btnClick.addEventListener('click', btnSetClicked)
 var counter = 0
 
-function btnClicked() {
+function btnSetClicked() {
     console.log('Button was clicked')
     var form = document.querySelector('form')
 
@@ -17,7 +17,7 @@ function btnClicked() {
             var input = document.createElement('input')
             input.id = 'set' + counter;
             input.type = 'number';
-            input.name = 'set' + counter;
+            input.name = 'set';
             input.placeholder = 'Set ' + counter;
             newDiv.appendChild(input);
             console.log(`Set input ${counter} was created`)
@@ -27,7 +27,7 @@ function btnClicked() {
             var input = document.createElement('input')
             input.id = 'rep' + counter;
             input.type = 'number';
-            input.name = 'rep' + counter;
+            input.name = 'rep';
             input.placeholder = 'Reps for set ' + counter;
             newDiv.appendChild(input);
             console.log(`Rep input ${counter} was created`)
