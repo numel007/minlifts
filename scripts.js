@@ -9,31 +9,31 @@ function btnSetClicked() {
     var addDiv = function() {
         ++counter;
         var newDiv = document.createElement('div')
-        newDiv.id = 'set-rep-' + counter;
+        newDiv.id = `set-${counter}`;
         form.appendChild(newDiv);
-        console.log(`Created div ${counter}`)
+        console.log(`Created div for set ${counter}`)
 
-        var addSet = function() {
+        var addWeight = function() {
             var input = document.createElement('input')
-            input.id = 'set' + counter;
+            input.id = `weight${counter}`;
             input.type = 'number';
-            input.name = 'set';
-            input.placeholder = 'Set ' + counter;
+            input.name = 'weight';
+            input.placeholder = `Weight for set ${counter}`;
             newDiv.appendChild(input);
-            console.log(`Set input ${counter} was created`)
+            console.log(`Weight input ${counter} was created`)
         };
 
         var addRep = function () {
             var input = document.createElement('input')
-            input.id = 'rep' + counter;
+            input.id = `rep${counter}`;
             input.type = 'number';
             input.name = 'rep';
-            input.placeholder = 'Reps for set ' + counter;
+            input.placeholder = `Reps for set ${counter}`;
             newDiv.appendChild(input);
             console.log(`Rep input ${counter} was created`)
         };
 
-        addSet();
+        addWeight();
         addRep();
     }
 
