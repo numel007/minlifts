@@ -51,24 +51,33 @@ function calculateClicked() {
     console.log(`${exerciseSelected} selected`)
     let weightTotal = 0
     let repTotal = 0
+    var calculateSection = document.querySelector('#calculations')
 
-    // Iterates through weight input fields and adds values to weightTotal
-    for (var i=1; i <= counter; i++) {
-        var weightId = "weight" + i
-        console.log(`${i} sets created.`)
-        let currentWeight = document.getElementById(weightId).value
-        console.log(`${currentWeight} lifted in set${i}`)
-        weightTotal += parseInt(currentWeight)
-    };
+    for (var i=1; i<=counter; i++) {
 
-    // Iterates through rep input fields and adds values to repTotal
-    for (var i=1; i<= counter; i++) {
+        // Create variables that store dynamic strings to reference as id names later
         var repID = "rep" + i
+        var weightID = "weight" + i
+
+        // Use dynamic ids to grab value of each created weight and rep input field
         let currentRep = document.getElementById(repID).value
-        console.log(`${currentRep} reps in set ${i}`)
+        let currentWeight = document.getElementById(weightID).value
+
+        // Calculate total weight moved in each set
+        let setWeightTotal = currentWeight * currentRep
+        console.log(`${setWeightTotal} weight moved in set ${i}`)
+
+        // Add weight moved and rep count in set to running totals of each
+        weightTotal += parseInt(setWeightTotal)
         repTotal += parseInt(currentRep)
     }
 
     console.log(`${weightTotal} total weight lifted.`)
     console.log(`${repTotal} total reps`)
+
+    // Creates and writes into a paragraph the average weight lifted each set
+    var weightAverage = document.createElement('p');
+    weightAverage.innerHTML = weightTotal / repTotal
+    calculateSection.appendChild(weightAverage);
+    console.log(`${weightAverage} was created`)
 }
