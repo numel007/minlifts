@@ -5,6 +5,7 @@ body {
     align-items: center;
 }
 
+/* Controls sets and reps input area */
 section#sets-reps {
     display: flex;
     flex-direction: column;
@@ -14,20 +15,25 @@ section#sets-reps {
     border-style: solid;
 }
 
-section#sets-reps div {
-    padding: 10px;
+section#sets-reps {
+    display: flex;
 }
 
-section#sets-reps label:nth-child(odd) {
-    font-weight: bold;
-    color: black;
-    font-size: 1.35em;
+section#sets-reps:nth-child(odd) {
+    width: 40px;
 }
 
+/* Control reps input style */
 section#sets-reps label:nth-child(odd) input {
     width: 35px;
 }
-
+/* Control weight input style */
 section#sets-reps label:nth-child(even) input {
     width: 100px;
+} */
+
+button {
+    width: fit-content;
+    align-self: center;
 }
+
