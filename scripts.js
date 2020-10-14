@@ -1,9 +1,12 @@
 const btnClick = document.querySelector('#btnSet')
 btnClick.addEventListener('click', btnSetClicked)
+const calculateClick = document.querySelector('#calculate')
+calculateClick.addEventListener('click', calculateClicked)
+const exerciseSelected = document.querySelector('#exercise-name').value
 var counter = 0
+var counter1 = 0
 
 function btnSetClicked() {
-    console.log('Add new set button was clicked')
     var form = document.querySelector('form')
 
     var addDiv = function() {
@@ -38,4 +41,19 @@ function btnSetClicked() {
     }
 
     addDiv();
+}
+
+function calculateClicked() {
+    console.log(`${exerciseSelected} selected`)
+    const weightTotal = 0
+
+    for (var i=1; i <= counter; i++) {
+        var weightId = "weight" + i
+        console.log(`${i} sets created.`)
+        const currentWeight = document.getElementById(weightId).value
+        console.log(`${currentWeight} lifted in set${i}`)
+        // weightTotal += currentWeight
+    };
+    
+    console.log(`${weightTotal} total weight lifted.`)
 }
