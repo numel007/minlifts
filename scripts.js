@@ -3,7 +3,7 @@ btnClick.addEventListener('click', btnSetClicked)
 var counter = 0
 
 function btnSetClicked() {
-    console.log('Button was clicked')
+    console.log('Add new set button was clicked')
     var form = document.querySelector('form')
 
     var addDiv = function() {

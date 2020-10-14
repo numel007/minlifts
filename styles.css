@@ -19,8 +19,9 @@ section#sets-reps {
     display: flex;
 }
 
-section#sets-reps:nth-child(odd) {
-    width: 40px;
+input {
+    margin: 0px 0px 10px 5px;
+    width: 100px;
 }
 
 /* Control reps input style */
@@ -30,10 +31,10 @@ section#sets-reps label:nth-child(odd) input {
 /* Control weight input style */
 section#sets-reps label:nth-child(even) input {
     width: 100px;
-} */
+}
 
-button {
-    width: fit-content;
+button#btnSet {
+    width: 100px;
     align-self: center;
 }
 
