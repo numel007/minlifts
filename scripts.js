@@ -1,9 +1,19 @@
 const btnClick = document.querySelector('#btnSet')
 btnClick.addEventListener('click', btnSetClicked)
+
 const calculateClick = document.querySelector('#calculate')
 calculateClick.addEventListener('click', calculateClicked)
-const exerciseSelected = document.querySelector('#exercise-name').value
+
+let exerciseSelected = document.querySelector('#exercise-name')
+exerciseSelected.addEventListener('input', exerciseSelection)
+
 var counter = 0
+
+// Updates exerciseSelected with new selected exercise
+function exerciseSelection() {
+    exerciseSelected = document.querySelector('#exercise-name').value
+    console.log(`${exerciseSelected} was selected.`)
+}
 
 // Handles Add New Set button click
 function btnSetClicked() {
@@ -77,7 +87,6 @@ function calculateClicked() {
 
     // Creates and writes into a paragraph the average weight lifted each set
     var weightAverage = document.createElement('p');
-    weightAverage.innerHTML = weightTotal / repTotal
+    weightAverage.innerHTML = `${exerciseSelected} averaged ${weightTotal / repTotal} per rep.`
     calculateSection.appendChild(weightAverage);
-    console.log(`${weightAverage} was created`)
 }
