@@ -116,41 +116,71 @@ function calculateClicked() {
     calculateSection.appendChild(liftTotals);
 }
 
-var getMinutes = parseInt(document.querySelector('#min-input').value)
-var getSeconds = parseInt(document.querySelector('#sec-input').value)
-var startButton = document.querySelector('#startTimer')
-startButton.addEventListener('click', timerFunction)
+// Select minutes and seconds input fields
+var getMinutes = document.querySelector('#min-input')
+var getSeconds = document.querySelector('#sec-input')
 
-// minutes and seconds variables not updating
+// Select start timer button
+var startTimerButton = document.querySelector('#startTimer')
+
+// Initialize variables for use in timerFunction
+var minutes = 0
+var seconds = 0
+
+// Update variables with new user input times
+getMinutes.addEventListener('input', updateTimes)
+getSeconds.addEventListener('input', updateTimes)
+
+// Update variables with new user input times
+function updateTimes() {
+    minutes = parseInt(getMinutes.value)
+    seconds = parseInt(getSeconds.value)
+}
+
+// Start timerFunction on button click
+startTimerButton.addEventListener('click', timerFunction)
+
+// Math for timer display
 function timerFunction() {
-    var minutes = getMinutes
-    var seconds = getSeconds
-    console.log(minutes + " mins " + seconds + " secs")
+
+    // Updates every 1000ms
     setInterval(function () {
+
+        // Decrement seconds count by 1 if minutes exceeds 0, update timer display accordingly
         if (minutes > 0) {
             seconds -= 1
+            document.querySelector('#timer-display').innerHTML = minutes + ":" + seconds;
+
+            // Concatonate 0 before seconds when seconds is less than 10, for visual purposes only
             if (seconds < 10) {
                 seconds = "0" + seconds
             }
-            document.querySelector('#timer-display').innerHTML = minutes + ":" + seconds;
+
+            // When seconds reaches 0, decrement minutes by 1 and reset seconds to 60
             if (seconds <= 0) {
                 minutes -= 1
                 seconds = 60
+
                 if (seconds < 10) {
                     seconds = "0" + seconds
                 }
             }
         }
+
+        // When minutes hits 0, hold minutes at 0 instead of decrementing again. 
         else if (minutes <= 0) {
             minutes = 0
             seconds -= 1
+            document.querySelector('#timer-display').innerHTML = minutes + ":" + seconds;
+
             if (seconds < 10) {
                 seconds = "0" + seconds
             }
-            document.querySelector('#timer-display').innerHTML = minutes + ":" + seconds;
         }
 
-        if (minutes <= 0 && seconds <= 0)
+        // When both minutes and seconds are at 0, display this text
+        if (minutes <= 0 && seconds <= 0) {
             document.querySelector('#timer-display').innerHTML = "TIMER EXPIRED";
+        }
     }, 1000)
 }
