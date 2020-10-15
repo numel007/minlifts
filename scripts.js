@@ -1,8 +1,11 @@
-const btnClick = document.querySelector('#btnSet')
-btnClick.addEventListener('click', btnSetClicked)
+const addSetClick = document.querySelector('#addSet')
+addSetClick.addEventListener('click', addSetClicked)
 
 const calculateClick = document.querySelector('#calculate')
 calculateClick.addEventListener('click', calculateClicked)
+
+const removeSetClick = document.querySelector('#removeSet')
+removeSetClick.addEventListener('click', removeSetClicked)
 
 let exerciseSelected = document.querySelector('#exercise-name')
 exerciseSelected.addEventListener('input', exerciseSelection)
@@ -16,7 +19,7 @@ function exerciseSelection() {
 }
 
 // Handles Add New Set button click
-function btnSetClicked() {
+function addSetClicked() {
     var form = document.querySelector('form')
 
     // Creates new div in form with weight and rep input fields with unique ids
@@ -52,6 +55,25 @@ function btnSetClicked() {
     }
 
     addDiv();
+}
+
+// Handles delete set button click
+function removeSetClicked () {
+    // Create ids based off current counter value
+    var repID = 'rep' + counter
+    var weightID = 'weight' + counter
+
+    // Select input fields using ids
+    var repInput = document.getElementById(repID);
+    var weightInput = document.getElementById(weightID);
+
+    // Remove selected input fields
+    repInput.parentNode.removeChild(repInput)
+    weightInput.parentNode.removeChild(weightInput)
+
+    // Decrement counter so next created field starts from where the deleted input left off
+    counter -= 1
+    console.log("Deleted one rep input")
 }
 
 // Handles Calculate Average button click
