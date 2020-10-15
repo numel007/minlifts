@@ -116,53 +116,41 @@ function calculateClicked() {
     calculateSection.appendChild(liftTotals);
 }
 
-// var selectMinutes = document.querySelector('#min-input')
-// var selectSeconds = document.querySelector('#sec-input')
-// var test_minutes = 0
-// var test_seconds = 0
+var getMinutes = parseInt(document.querySelector('#min-input').value)
+var getSeconds = parseInt(document.querySelector('#sec-input').value)
+var startButton = document.querySelector('#startTimer')
+startButton.addEventListener('click', timerFunction)
 
-// selectMinutes.addEventListener('input', updateTimer)
-// selectSeconds.addEventListener('input', updateTimer)
-
-// function updateTimer() {
-//     test_minutes = parseInt(selectMinutes.value)
-//     test_seconds = parseInt(selectSeconds.value)
-//     console.log(test_minutes + 'mins ' + test_seconds + 'secs')
-// }
-
-// var startButton = document.querySelector('#startTimer')
-// startButton.addEventListener('click', timerFunction)
-
-var test_minutes = 10
-var test_seconds = 60
-timerFunction()
-
+// minutes and seconds variables not updating
 function timerFunction() {
+    var minutes = getMinutes
+    var seconds = getSeconds
+    console.log(minutes + " mins " + seconds + " secs")
     setInterval(function () {
-        if (test_minutes > 0) {
-            test_seconds -= 1
-            if (test_seconds < 10) {
-                test_seconds = "0" + test_seconds
+        if (minutes > 0) {
+            seconds -= 1
+            if (seconds < 10) {
+                seconds = "0" + seconds
             }
-            document.querySelector('#timer-display').innerHTML = test_minutes + ":" + test_seconds;
-            if (test_seconds <= 0) {
-                test_minutes -= 1
-                test_seconds = 60
-                if (test_seconds < 10) {
-                    test_seconds = "0" + test_seconds
+            document.querySelector('#timer-display').innerHTML = minutes + ":" + seconds;
+            if (seconds <= 0) {
+                minutes -= 1
+                seconds = 60
+                if (seconds < 10) {
+                    seconds = "0" + seconds
                 }
             }
         }
-        else if (test_minutes <= 0) {
-            test_minutes = 0
-            test_seconds -= 1
-            if (test_seconds < 10) {
-                test_seconds = "0" + test_seconds
+        else if (minutes <= 0) {
+            minutes = 0
+            seconds -= 1
+            if (seconds < 10) {
+                seconds = "0" + seconds
             }
-            document.querySelector('#timer-display').innerHTML = test_minutes + ":" + test_seconds;
+            document.querySelector('#timer-display').innerHTML = minutes + ":" + seconds;
         }
 
-        if (test_minutes <= 0 && test_seconds <= 0)
+        if (minutes <= 0 && seconds <= 0)
             document.querySelector('#timer-display').innerHTML = "TIMER EXPIRED";
     }, 1000)
 }
