@@ -23,7 +23,7 @@ function addSetClicked() {
     var form = document.querySelector('form')
 
     // Creates new div in form with weight and rep input fields with unique ids
-    var addDiv = function() {
+    var addDiv = function () {
         ++counter;
         var newDiv = document.createElement('div')
         newDiv.id = `set-${counter}`;
@@ -31,7 +31,7 @@ function addSetClicked() {
         console.log(`Created set ${counter}`)
 
         // Create weight input with id
-        var addWeight = function() {
+        var addWeight = function () {
             var input = document.createElement('input')
             input.id = `weight${counter}`;
             input.type = 'number';
@@ -58,7 +58,7 @@ function addSetClicked() {
 }
 
 // Handles delete set button click
-function removeSetClicked () {
+function removeSetClicked() {
     // Create ids based off current counter value
     var repID = 'rep' + counter
     var weightID = 'weight' + counter
@@ -83,7 +83,7 @@ function calculateClicked() {
     let repTotal = 0
     var calculateSection = document.querySelector('#calculations')
 
-    for (var i=1; i<=counter; i++) {
+    for (var i = 1; i <= counter; i++) {
 
         // Create variables that store dynamic strings to reference as id names later
         var repID = "rep" + i
@@ -114,4 +114,55 @@ function calculateClicked() {
     liftTotals.innerHTML = `${weightTotal}lbs lifted over ${repTotal} reps.`
     calculateSection.appendChild(weightAverage);
     calculateSection.appendChild(liftTotals);
+}
+
+// var selectMinutes = document.querySelector('#min-input')
+// var selectSeconds = document.querySelector('#sec-input')
+// var test_minutes = 0
+// var test_seconds = 0
+
+// selectMinutes.addEventListener('input', updateTimer)
+// selectSeconds.addEventListener('input', updateTimer)
+
+// function updateTimer() {
+//     test_minutes = parseInt(selectMinutes.value)
+//     test_seconds = parseInt(selectSeconds.value)
+//     console.log(test_minutes + 'mins ' + test_seconds + 'secs')
+// }
+
+// var startButton = document.querySelector('#startTimer')
+// startButton.addEventListener('click', timerFunction)
+
+var test_minutes = 10
+var test_seconds = 60
+timerFunction()
+
+function timerFunction() {
+    setInterval(function () {
+        if (test_minutes > 0) {
+            test_seconds -= 1
+            if (test_seconds < 10) {
+                test_seconds = "0" + test_seconds
+            }
+            document.querySelector('#timer-display').innerHTML = test_minutes + ":" + test_seconds;
+            if (test_seconds <= 0) {
+                test_minutes -= 1
+                test_seconds = 60
+                if (test_seconds < 10) {
+                    test_seconds = "0" + test_seconds
+                }
+            }
+        }
+        else if (test_minutes <= 0) {
+            test_minutes = 0
+            test_seconds -= 1
+            if (test_seconds < 10) {
+                test_seconds = "0" + test_seconds
+            }
+            document.querySelector('#timer-display').innerHTML = test_minutes + ":" + test_seconds;
+        }
+
+        if (test_minutes <= 0 && test_seconds <= 0)
+            document.querySelector('#timer-display').innerHTML = "TIMER EXPIRED";
+    }, 1000)
 }
