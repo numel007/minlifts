@@ -46,3 +46,10 @@ button {
     margin: 5px;
 }
 
+p#timer-display {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 8em;
+    font-weight: bold;
+    margin-bottom: -10px;
+}
+
