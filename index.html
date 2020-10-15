@@ -11,35 +11,37 @@
 </head>
 
 <body>
-    <!-- <h1>Welcome to MinLifts</h1> -->
-    <div id="left-column">
-        <section id="exercise">
-            <select id="exercise-name">
-                <option value=""> </option>
-                <option value="Deadlift">Deadlift</option>
-                <option value="Bench Press">Benchpress</option>
-                <option value="Back Squat">Back Squat</option>
-                <option value="Overhead Press">Overhead Press</option>
-            </select>
-        </section>
+    <h1>MinLifts: Lift with Less</h1>
+    <div id="text">
+        <div id="left-column">
+            <section id="exercise">
+                <select id="exercise-name">
+                    <option value=""> </option>
+                    <option value="Deadlift">Deadlift</option>
+                    <option value="Bench Press">Bench Press</option>
+                    <option value="Back Squat">Back Squat</option>
+                    <option value="Overhead Press">Overhead Press</option>
+                </select>
+            </section>
 
-        <section id="sets-reps">
-            <form>
-            </form>
-            <button id="addSet" type="button">Add set</button>
-            <button id="removeSet" type="button">Remove set</button>
-            <button id="calculate" type="button">Calculate average</button>
-        </section>
-    </div>
+            <section id="sets-reps">
+                <form>
+                </form>
+                <button id="addSet" type="button">Add set</button>
+                <button id="removeSet" type="button">Remove set</button>
+                <button id="calculate" type="button">Calculate average</button>
+            </section>
+        </div>
 
-    <div id="right-column">
-        <section id="timer">
-            <label for="timer-input">Timer
-                <input type="datetime" name="timer-input" id="timer">
-            </label>
-        </section>
-        <section id='calculations'>
-        </section>
+        <div id="right-column">
+            <section id="timer">
+                <label for="timer-input">Timer (Not hooked up)
+                    <input type="datetime" name="timer-input" id="timer">
+                </label>
+            </section>
+            <section id='calculations'>
+            </section>
+        </div>
     </div>
     <script src="scripts.js"></script>
 </body>
