@@ -15,6 +15,7 @@
     <div id="text">
         <div id="left-column">
             <section id="exercise">
+                <p>Select Exercise</p>
                 <select id="exercise-name">
                     <option value=""> </option>
                     <option value="Deadlift">Deadlift</option>
@@ -34,9 +35,12 @@
         </div>
 
         <div id="right-column">
-            <section id="timer">
-                <label for="timer-input">Timer (Not hooked up)
-                    <input type="datetime" name="timer-input" id="timer">
+            <section id="timerSection">
+                <label for="timer-input">
+                    <p id="timer-display"></p>
+                    <input type="number" id="min-input">mins
+                    <input type="number" id="sec-input">secs
+                    <button id="startTimer" type="button">Start Timer</button>
                 </label>
             </section>
             <section id='calculations'>
