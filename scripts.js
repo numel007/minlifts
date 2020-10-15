@@ -171,16 +171,17 @@ function timerFunction() {
         else if (minutes <= 0) {
             minutes = 0
             seconds -= 1
-            document.querySelector('#timer-display').innerHTML = minutes + ":" + seconds;
-
+            
             if (seconds < 10) {
                 seconds = "0" + seconds
             }
+
+            document.querySelector('#timer-display').innerHTML = minutes + ":" + seconds;
         }
 
-        // When both minutes and seconds are at 0, display this text
+        // When both minutes and seconds are 0, display this text
         if (minutes <= 0 && seconds <= 0) {
-            document.querySelector('#timer-display').innerHTML = "TIMER EXPIRED";
+            document.querySelector('#timer-display').innerHTML = "Timer Expired";
         }
     }, 1000)
 }
