@@ -146,10 +146,14 @@ function timerFunction() {
     // Updates every 1000ms
     setInterval(function () {
 
+        // Displays text when timer expires
+        if (minutes <= 0 && seconds <= 0) {
+            document.querySelector('#timer-display').innerHTML = "Timer Expired";
+        }
+        
         // Decrement seconds count by 1 if minutes exceeds 0, update timer display accordingly
-        if (minutes > 0) {
+        else if (minutes > 0) {
             seconds -= 1
-            document.querySelector('#timer-display').innerHTML = minutes + ":" + seconds;
 
             // Concatonate 0 before seconds when seconds is less than 10, for visual purposes only
             if (seconds < 10) {
@@ -165,23 +169,20 @@ function timerFunction() {
                     seconds = "0" + seconds
                 }
             }
+
+            document.querySelector('#timer-display').innerHTML = minutes + ":" + seconds;
         }
 
         // When minutes hits 0, hold minutes at 0 instead of decrementing again. 
         else if (minutes <= 0) {
             minutes = 0
             seconds -= 1
-            
+
             if (seconds < 10) {
                 seconds = "0" + seconds
             }
 
             document.querySelector('#timer-display').innerHTML = minutes + ":" + seconds;
-        }
-
-        // When both minutes and seconds are 0, display this text
-        if (minutes <= 0 && seconds <= 0) {
-            document.querySelector('#timer-display').innerHTML = "Timer Expired";
         }
     }, 1000)
 }
