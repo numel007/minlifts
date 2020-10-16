@@ -117,8 +117,8 @@ function calculateClicked() {
 }
 
 // Select minutes and seconds input fields
-var getMinutes = document.querySelector('#min-input')
-var getSeconds = document.querySelector('#sec-input')
+var selectMinutes = document.querySelector('#min-input')
+var selectSeconds = document.querySelector('#sec-input')
 
 // Select start timer button
 var startTimerButton = document.querySelector('#startTimer')
@@ -128,13 +128,13 @@ var minutes = 0
 var seconds = 0
 
 // Update variables with new user input times
-getMinutes.addEventListener('input', updateTimes)
-getSeconds.addEventListener('input', updateTimes)
+selectMinutes.addEventListener('input', getTimes)
+selectSeconds.addEventListener('input', getTimes)
 
-// Update variables with new user input times
-function updateTimes() {
-    minutes = parseInt(getMinutes.value)
-    seconds = parseInt(getSeconds.value)
+// Update variables with input times
+function getTimes() {
+    minutes = parseInt(selectMinutes.value)
+    seconds = parseInt(selectSeconds.value)
 }
 
 // Start timerFunction on button click
@@ -160,10 +160,10 @@ function timerFunction() {
                 seconds = "0" + seconds
             }
 
-            // When seconds reaches 0, decrement minutes by 1 and reset seconds to 60
+            // When seconds count reaches 0, decrement minutes by 1 and reset seconds to 60
             if (seconds <= 0) {
                 minutes -= 1
-                seconds = 60
+                seconds = 59
 
                 if (seconds < 10) {
                     seconds = "0" + seconds
@@ -173,7 +173,7 @@ function timerFunction() {
             document.querySelector('#timer-display').innerHTML = minutes + ":" + seconds;
         }
 
-        // When minutes hits 0, hold minutes at 0 instead of decrementing again. 
+        // When minutes count reaches 0, hold minutes at 0 instead of decrementing again. 
         else if (minutes <= 0) {
             minutes = 0
             seconds -= 1
