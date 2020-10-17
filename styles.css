@@ -1,13 +1,28 @@
 h1 {
     text-align: center;
     padding: 50px;
+    font-size: 100px;
+    color: red;
+    text-shadow: 5px 5px 0px blue, 8px 8px 0px white;
+}
+
+html {
+    background-image: url(./images/bg.png);
+    background-size: 25%;
 }
 
 div#text {
+    margin: auto;
     display: flex;
     justify-content: space-evenly;
     text-align: center;
-    align-items: center;
+    background-color: white;
+    width: 50vw;
+    padding: 20px;
+}
+
+select#exercise-name {
+    font-size: 1em;
 }
 
 /* Controls sets and reps input area */
@@ -30,15 +45,6 @@ input {
     height: 15px;
 }
 
-/* Control reps input style */
-section#sets-reps label:nth-child(odd) input {
-    width: 35px;
-}
-/* Control weight input style */
-section#sets-reps label:nth-child(even) input {
-    width: 100px;
-}
-
 button {
     width: 150px;
     align-self: center;
@@ -51,5 +57,10 @@ p#timer-display {
     font-size: 8em;
     font-weight: bold;
     margin-bottom: -10px;
+    display: flex;
+    flex-direction: column;
 }
 
+section#timerSection input {
+    width: 90px;
+}
