@@ -13,7 +13,6 @@
     <div id="text">
         <div id="left-column">
             <section id="exercise">
-                <p>Select Exercise</p>
                 <select id="exercise-name">
                     <option value="">Choose Exercise</option>
                     <option value="Deadlift">Deadlift</option>
@@ -36,8 +35,11 @@
             <section id="timerSection">
                 <label for="timer-input">
                     <p id="timer-display"></p>
-                    <input type="number" id="min-input"> mins
-                    <input type="number" id="sec-input"> secs
+                    <div id="timer-input-section">
+                        <p>REST TIMER</p>
+                    <input type="number" id="min-input" placeholder="mins">
+                    <input type="number" id="sec-input" placeholder="secs">
+                    </div>
                     <button id="startTimer" type="button">Start Timer</button>
                 </label>
             </section>
