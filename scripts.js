@@ -110,8 +110,8 @@ function calculateClicked() {
     var liftTotals = document.createElement('p');
 
     // Add paragraphs with average and lifted totals
-    weightAverage.innerHTML = `${exerciseSelected} averaged ${(weightTotal / repTotal).toFixed(2)}lbs per rep.`
-    liftTotals.innerHTML = `${weightTotal}lbs lifted over ${repTotal} reps.`
+    weightAverage.innerHTML = `${exerciseSelected} averaged ${(weightTotal / repTotal).toFixed(2)}lbs/rep`
+    liftTotals.innerHTML = `${weightTotal}lbs lifted over ${repTotal} reps`
     calculateSection.appendChild(weightAverage);
     calculateSection.appendChild(liftTotals);
 }
