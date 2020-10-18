@@ -5,13 +5,15 @@
 ![example](/images/example.png "Example user input") Example with user inputs
 
 # Usage
+If you want to use MinLifts without downloading a local copy, click [here](https://github.com/numel007/minlifts)
 
-1. Download the zip, unpack, and open index.html
-2. Choose an exercise from the dropdown menu
-3. Enter weight and reps while using "add set" and "remove set" buttons as needed
-4. Use "calculate average" button to display average weight lifted per rep as well as total weight and reps completed.
-5. For rest timer; enter desired minutes and seconds in corresponding input boxes, then click "start timer" button. Do not click more than once. There are bugs. So many bugs.
-6. To reset timer, reload the page. A fix is in the works.
+To use MinLifts locally, download the zip, unpack, and open index.html
+
+1. Choose an exercise from the dropdown menu
+2. Enter weight and reps while using "add set" and "remove set" buttons as needed
+3. Use "calculate average" button to display average weight lifted per rep as well as total weight and reps completed.
+4. For rest timer; enter desired minutes and seconds in corresponding input boxes, then click "start timer" button. Do not click more than once. There are bugs. So many bugs.
+5. To reset timer, reload the page. A fix is in the works.
 
 # Purpose
 
