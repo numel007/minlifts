@@ -5,7 +5,7 @@
 ![example](/images/example.png "Example user input") Example with user inputs
 
 # Usage
-If you want to use MinLifts without downloading a local copy, click [here](https://github.com/numel007/minlifts)
+[Click here](https://github.com/numel007/minlifts) to use a possibly deprecated version of MinLifts without downloading a local copy.
 
 To use MinLifts locally, download the zip, unpack, and open index.html
 
